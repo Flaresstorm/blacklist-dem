@@ -7,7 +7,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 
-
+//app principal que renderiza y asigna rutas de la propia app(para que el servidor renderiza debe hacerse asignarse las rutas)
 class App extends Component {
   render() {
     return (
