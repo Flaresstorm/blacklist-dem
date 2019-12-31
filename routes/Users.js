@@ -3,12 +3,13 @@ const users = express.Router()
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-
+//bcrypt encripta los datos al relizar el POST, en la bd estaran escriptados
+//jason web token crea un toker por sesion para almacenar la data, de esta manera 
 const User = require('../models/User')
 users.use(cors())
 
 process.env.SECRET_KEY = 'secret'
-
+//post en la ruta registe toma el body de los campos y los sube a la ruta users
 users.post('/register', (req, res) => {
   const today = new Date()
   const userData = {
@@ -21,12 +22,12 @@ users.post('/register', (req, res) => {
     created: today
   }
 
-  User.findOne({
+  User.find({
     where: {
       email: req.body.email
     }
   })
-    //TODO bcrypt
+    
     .then(user => {
       if (!user) {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -47,9 +48,9 @@ users.post('/register', (req, res) => {
       res.send('error: ' + err)
     })
 })
-
+//post en la ruta login toma el body de los campos y lo compara con users para registrar al usuario
 users.post('/login', (req, res) => {
-  User.findOne({
+  User.find({
     where: {
       email: req.body.email
     }
@@ -70,11 +71,11 @@ users.post('/login', (req, res) => {
       res.status(400).json({ error: err })
     })
 })
-
+//get en la ruta profile toma el body por id 
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 
-  User.findOne({
+  User.find({
     where: {
       id: decoded.id
     }

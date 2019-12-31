@@ -7,7 +7,8 @@ class Landing extends Component {
     localStorage.removeItem('usertoken')
     this.props.history.push(`/`)
   }
-
+//navbar incluye privilegios de usuario, no tiene session destroy (añadible)
+//navbar es compartido por toda la app
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">

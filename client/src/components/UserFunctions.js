@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+//axios sirve como gestionaron para las consultar (leer documentacion ), axios puede usar rutas api http
 export const register = newUser => {
   return axios
     .post('users/register', {

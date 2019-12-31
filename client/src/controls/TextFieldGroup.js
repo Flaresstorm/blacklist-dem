@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
-
+//utils para manejo de props (leer sobre props en react)
 const TextFieldGroup = ({
   name,
   placeholder,

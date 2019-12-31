@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const db = {}
+//conexion a la bd
 const sequelize = new Sequelize('blacklist', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
