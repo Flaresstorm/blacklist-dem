@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+//para mostrar y añadir data se debe definir en el contructor de cada componente
 
 class Landing extends Component {
   logOut(e) {
@@ -7,8 +8,7 @@ class Landing extends Component {
     localStorage.removeItem('usertoken')
     this.props.history.push(`/`)
   }
-//navbar incluye privilegios de usuario, no tiene session destroy (añadible)
-//navbar es compartido por toda la app
+
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
@@ -30,19 +30,19 @@ class Landing extends Component {
         
         <li className="nav-item">
           <Link to="/profile" className="nav-link">
-            History
+            Historial
           </Link>
         </li>
         <li className="nav-item">
           <a href="" onClick={this.logOut.bind(this)} className="nav-link">
-            Logout
+            Salir
           </a>
         </li>
       </ul>
     )
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light rounded">
         <button
           className="navbar-toggler"
           type="button"
@@ -62,7 +62,7 @@ class Landing extends Component {
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/" className="nav-link">
-                Home
+                Inicio
               </Link>
             </li>
           </ul>

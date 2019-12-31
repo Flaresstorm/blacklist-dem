@@ -3,13 +3,14 @@ const users = express.Router()
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-//bcrypt encripta los datos al relizar el POST, en la bd estaran escriptados
-//jason web token crea un toker por sesion para almacenar la data, de esta manera 
+//bcrypt encripta los datos al realizar el POST, en la bd estaran encriptados
+//json web token crea un token por sesion para almacenar la data 
 const User = require('../models/User')
 users.use(cors())
 
 process.env.SECRET_KEY = 'secret'
-//post en la ruta registe toma el body de los campos y los sube a la ruta users
+//post en la ruta login toma el body de los campos y lo compara con users para registrar al usuario
+
 users.post('/register', (req, res) => {
   const today = new Date()
   const userData = {
@@ -48,7 +49,7 @@ users.post('/register', (req, res) => {
       res.send('error: ' + err)
     })
 })
-//post en la ruta login toma el body de los campos y lo compara con users para registrar al usuario
+// post en la ruta login toma el el body de los campos y lo compara con users al registrar al usuario
 users.post('/login', (req, res) => {
   User.find({
     where: {
@@ -71,7 +72,7 @@ users.post('/login', (req, res) => {
       res.status(400).json({ error: err })
     })
 })
-//get en la ruta profile toma el body por id 
+//get en la ruta profile toma el body por id y trae los datos 
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
 

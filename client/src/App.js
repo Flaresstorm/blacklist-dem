@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-
+import './css/App.css';
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
 import Login from './components/Login'
 import Register from './components/Register'
 import Profile from './components/Profile'
 
-//app principal que renderiza y asigna rutas de la propia app(para que el servidor renderiza debe hacerse asignarse las rutas)
+//app principal que renderiza y asgina las rutas de la propia app (para que el servidor renderiza debe asignarse las rutas en el servidor)
 class App extends Component {
   render() {
     return (

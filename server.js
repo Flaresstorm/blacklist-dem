@@ -11,6 +11,7 @@ app.use(
     extended: false
   })
 )
+
 //ruta establecida para manipular la data, totalmente editable
 var Users = require('./routes/Users')
 app.use('/users', Users)

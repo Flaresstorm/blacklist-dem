@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
+//para mostrar y añadir data se debe definir en el contructor de cada componente
 
 class Login extends Component {
-  //state de la aplicacion que se ejecuta en esta pagina, incluye los datos mencionados en el constructor()
   constructor() {
     super()
     this.state = {

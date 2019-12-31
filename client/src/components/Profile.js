@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode'
+//para mostrar y añadir data se debe definir en el contructor de cada componente
 
 class Profile extends Component {
   constructor() {
@@ -31,34 +32,30 @@ class Profile extends Component {
   render() {
     return (
       <div className="container">
+        <h1 className="main-title">Último registro</h1>
         <div className="jumbotron mt-5">
           <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">Last register</h1>
+            
           </div>
           <table className="table col-md-6 mx-auto">
             <thead>
-              <td>fecha</td>
-              <td>responsable</td>
-              <td>nombre archivo</td>
-              <td>numero registro</td>
-              
-              
+              <td>Fecha</td>
+              <td>Responsable</td>
+              <td>Nombre archivo</td>
+              <td>Numero registro</td>
             </thead>
             <tbody>
                 <td>{this.state.created}</td>
                 <td>{this.state.email}</td>
                 <td>{this.state.file_name}</td>
                 <td>{this.state.number_register}</td>
-               
-             
-                
-              
             </tbody>
           </table>
         </div>
+        <hr/>
           <p>Subir nuevo archivo</p>
           <input type="file" id="myFile" name="filename2"/><br/><br/>
-          <input class="btn btn-primary" type="submit" value="Submit"/>
+          <input class="btn btn-primary" type="submit" value="Subir"/>
           <br/><br/><br/>
       </div>
       

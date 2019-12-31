@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = {}
 //conexion a la bd
-const sequelize = new Sequelize('blacklist', 'root', '', {
+const sequelize = new Sequelize('blacklist', 'root', 'desarrollo1', {
   host: 'localhost',
   dialect: 'mysql',
   operatorsAliases: false,

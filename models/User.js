@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const db = require('../database/db.js')
-//model sequelize para conectar con la bd, basta con seguir la estructura
+//model sequelize para conectar con la bd, basta con seguir la estructura al crear uno nuevo
 module.exports = db.sequelize.define(
   'user',
   {

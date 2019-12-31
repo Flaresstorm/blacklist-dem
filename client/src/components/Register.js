@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { register } from './UserFunctions'
+//para mostrar y añadir data se debe definir en el contructor de cada componente
 
 class Register extends Component {
   constructor() {
