@@ -13,14 +13,11 @@ app.use(
 )
 
 var Users = require('./routes/Users')
-var History = require('./routes/History')
+
 
 
 app.use('/users', Users)
-app.use('/histories', History)
-app.get('/blacklist', function(req, res) {
-  res.send('SEND HELP');
-});
+
 
 app.listen(port, function() {
   console.log('Server is running on port: ' + port)

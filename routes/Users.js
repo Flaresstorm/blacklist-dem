@@ -16,6 +16,8 @@ users.post('/register', (req, res) => {
     last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password,
+    file_name: req.body.file_name,
+    number_register: req.body.number_register,
     created: today
   }
 
@@ -31,7 +33,7 @@ users.post('/register', (req, res) => {
           userData.password = hash
           User.create(userData)
             .then(user => {
-              res.json({ status: user.email + ' Registered!' })
+              res.json({ status: user.email + ' Registered' })
             })
             .catch(err => {
               res.send('error: ' + err)

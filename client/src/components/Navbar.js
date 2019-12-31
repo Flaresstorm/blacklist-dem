@@ -26,13 +26,9 @@ class Landing extends Component {
 
     const userLink = (
       <ul className="navbar-nav">
+        
         <li className="nav-item">
           <Link to="/profile" className="nav-link">
-            User
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/history" className="nav-link">
             History
           </Link>
         </li>
